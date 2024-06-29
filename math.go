@@ -1,6 +1,6 @@
 package lo
 
-import "golang.org/x/exp/constraints"
+import "github.com/samber/lo/internal/constraints"
 
 // Range creates an array of numbers (positive and/or negative) with given length.
 func Range(elementNum int) []int {

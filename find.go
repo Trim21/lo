@@ -1,13 +1,14 @@
 package lo
 
 import (
+	"cmp"
 	"fmt"
 	"math/rand"
 
-	"golang.org/x/exp/constraints"
+	"github.com/samber/lo/internal/constraints"
 )
 
-// import "golang.org/x/exp/constraints"
+// import "github.com/samber/lo/internal/constraints"
 
 // IndexOf returns the index at which the first occurrence of a value is found in an array or return -1
 // if the value cannot be found.
@@ -221,7 +222,7 @@ func FindDuplicatesBy[T any, U comparable](collection []T, iteratee func(T) U) [
 }
 
 // Min search the minimum value of a collection.
-func Min[T constraints.Ordered](collection []T) T {
+func Min[T cmp.Ordered](collection []T) T {
 	var min T
 
 	if len(collection) == 0 {
@@ -264,7 +265,7 @@ func MinBy[T any](collection []T, comparison func(T, T) bool) T {
 }
 
 // Max searches the maximum value of a collection.
-func Max[T constraints.Ordered](collection []T) T {
+func Max[T cmp.Ordered](collection []T) T {
 	var max T
 
 	if len(collection) == 0 {
